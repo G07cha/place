@@ -1,0 +1,6 @@
+#canvas {
+  margin-left: 50%;
+  border: 1px solid black;
+  transform: translateX(-50%);
+  image-rendering: pixelated;
+}
