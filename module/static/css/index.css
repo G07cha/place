@@ -1,6 +1,14 @@
+html, body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
 #canvas {
   margin-left: 50%;
   border: 1px solid black;
   transform: translateX(-50%);
   image-rendering: pixelated;
+}
+
+.inputs {
+  text-align: center;
 }

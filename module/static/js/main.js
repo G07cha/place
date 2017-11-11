@@ -1,14 +1,10 @@
-(function() {
+(function(DI) {
   'use strict'
-  var canvas = document.getElementById('canvas')
+  var canvas = document.getElementById('canvas'),
+      colorInput = document.getElementById('color-input');
   
   canvas.addEventListener('click', function(event) {
-    setPixelColor(event.offsetX, event.offsetY, {
-      R: 100,
-      G: 100,
-      B: 100,
-      A: 255
-    })
+    setPixelColor(event.offsetX, event.offsetY, DI.hexToRGBA(colorInput.value))
   })
   
   function setPixelColor(x, y, color) {
@@ -30,4 +26,4 @@
       color: color
     }));
   }
-})();
+})(window);
