@@ -12,3 +12,5 @@ canvasCtrl.onClick(function(event) {
     color: utils.hexToRGBA(colorInput.value)
   })
 })
+
+setInterval(canvasCtrl.refresh.bind(canvasCtrl), 5000);
