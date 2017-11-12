@@ -7,6 +7,10 @@ then
       echo "Can't find Java"
 fi
 
-cd $DIR && \
-  rm $OUTPUT && \
-  $JAVA -jar bin/closure-compiler.jar --js_output_file=$OUTPUT 'static/js/*.js'
+cd $DIR
+
+if [ -f $OUTPUT ]; then
+    rm $OUTPUT
+fi
+
+$JAVA -jar bin/closure-compiler.jar --js_output_file=$OUTPUT 'static/js/*.js'
