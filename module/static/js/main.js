@@ -1,16 +1,17 @@
 goog.module('place')
 
-var canvasCtrl = goog.require('place.canvasCtrl');
-var utils = goog.require('place.utils');
-var API = goog.require('place.api');
-var colorInput = document.getElementById('color-input');
+const canvasCtrl = goog.require('place.canvasCtrl');
+const utils = goog.require('place.utils');
+const API = goog.require('place.api');
+const colorInput = document.getElementById('color-input');
+const REFRESH_INTERVAL = 5000;
 
-canvasCtrl.onClick(function(event) {
+canvasCtrl.onClick((event) => 
   API.updatePixel({
     x: event.offsetX,
     y: event.offsetY,
     color: utils.hexToRGBA(colorInput.value)
   })
-})
+)
 
-setInterval(canvasCtrl.refresh.bind(canvasCtrl), 5000);
+setInterval(canvasCtrl.refresh.bind(canvasCtrl), REFRESH_INTERVAL);

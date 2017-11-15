@@ -1,14 +1,10 @@
 goog.module('place.canvasCtrl');
 
-var canvas = {},
-    element = document.getElementById('canvas')
+const canvas = {},
+      element = document.getElementById('canvas')
 
-canvas.onClick = function (handler) {
-  element.addEventListener('click', handler)
-}
+canvas.onClick = (handler) => element.addEventListener('click', handler)
 
-canvas.refresh = function (newImage) {
-  element.src = '/canvas?' + Date.now()
-}
+canvas.refresh = (newImage) => element.src = '/canvas?' + Date.now()
 
 exports = canvas;
