@@ -6,12 +6,11 @@ const API = goog.require('place.api');
 const colorInput = document.getElementById('color-input');
 const REFRESH_INTERVAL = 5000;
 
-canvasCtrl.onClick((event) => 
-  API.updatePixel({
-    x: event.offsetX,
-    y: event.offsetY,
-    color: utils.hexToRGBA(colorInput.value)
-  })
-)
+canvasCtrl.onClick((event) => {
+  let data = canvasCtrl.getCoordinates(event)
+  data.color = utils.hexToRGBA(colorInput.value)
+  
+  API.updatePixel(data)
+})
 
 setInterval(canvasCtrl.refresh.bind(canvasCtrl), REFRESH_INTERVAL);
